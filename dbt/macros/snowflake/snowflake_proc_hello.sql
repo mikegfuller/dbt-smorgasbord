@@ -2,7 +2,7 @@
 
 {%- call statement('sp_hello', fetch_result=False) -%}
 
-    create or replace procedure {{this.schema}}.sp_hello_world()
+    create or replace procedure {{target.schema}}.sp_hello_world()
     returns string not null
     language javascript
     as
