@@ -3,14 +3,13 @@ import json
 import os
 
 #inputs (should be refactored to be more user friendly)
+account_id = <your_account_id>
+project_id = <your_project_id>
+user_id = <your_user_id>
+environment_id = <your_environment_id>
 api_token = os.getenv('DBT_CLOUD_API_KEY')
-account_id = <account_id>
-project_id = <project_id>
-user_id = <user_id>
-environment_name = 'Production'
 private_key = os.getenv('SNOW_KEY')
 passphrase = os.getenv('SNOW_PASSPHRASE')
-
 
 #dbt cloud base URL (v3)
 base_url = 'https://cloud.getdbt.com/api/v3/'
@@ -31,7 +30,7 @@ response_list_envs = json.loads(list_envs.content)
 
 #find environment based on name and return credentials ID
 for env in response_list_envs['data']:
-    if env['name'] == environment_name:
+    if env['id'] == environment_id:
         cred_id = env['credentials_id']
 
 #creds url
