@@ -1,0 +1,15 @@
+selectors:
+  - name: tables_and_changed_views
+    description: "run all tables and only views with changes"
+    # execute by changing a view model and executing dbt run --selector tables_and_changed_views (requires defer manifest)
+    definition:
+      union:
+        - intersection:
+            - method: state
+              value: modified
+            - method: path
+              value: models/selector_test
+            - method: tag
+              value: test_views
+        - method: tag
+          value: test_tables

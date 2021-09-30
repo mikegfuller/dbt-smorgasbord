@@ -1,0 +1,1 @@
+select {{round_dollars('1.10')}} as whole_dollar

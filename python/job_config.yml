@@ -1,0 +1,38 @@
+account:
+  id: <account_id>
+  name: The Jaffle Shop, Inc.
+
+jobs:
+  - name: <job_name>
+    projects:
+      - name: <project_name>
+        id: <project_id>
+        environments:
+          - name: <name_1>
+            id: <id_1>
+          - name: <name_2>
+            id: <id_2>
+    definition:
+      id: null
+      name: <job_name>
+      dbt_version: null
+      # future state job - level restart override
+      #restart_from_failure: True
+      triggers:
+        github_webhook: False
+        schedule: False
+        custom_branch_only: False
+      execute_steps:
+        - "dbt run"
+        - "dbt test"
+      settings:
+        threads: 1
+        target_name: "default"
+      state: 1
+      generate_docs: False
+      schedule:
+        date:
+          type: every_day
+        time:
+          interval: 1
+          type: every_hour
