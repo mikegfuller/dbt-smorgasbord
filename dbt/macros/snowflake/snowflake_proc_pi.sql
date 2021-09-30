@@ -2,7 +2,7 @@
 
 {%- call statement('sp_pi', fetch_result=False) -%}
 
-    create or replace procedure sp_pi()
+    create or replace procedure {{this.schema}}.sp_pi()
     returns float not null
     language javascript
     as
