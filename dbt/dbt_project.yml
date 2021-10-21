@@ -39,3 +39,9 @@ models:
 
 vars:
   org_name: 'Acme Corp'
+
+models:
+  dbt_artifacts:
+    +schema: artifacts
+    staging:
+      +schema: artifacts_staging
