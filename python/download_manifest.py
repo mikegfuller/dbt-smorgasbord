@@ -39,6 +39,7 @@ try:
 except OSError:
     pass
 
+#create new file
 with open(manifest_filename, "a") as manifest:
     manifest.write(str(formatted_manifest))
 
