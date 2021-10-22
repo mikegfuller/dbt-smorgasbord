@@ -45,3 +45,5 @@ models:
     +schema: artifacts
     staging:
       +schema: artifacts_staging
+      stg_dbt__models:
+        enabled: false
