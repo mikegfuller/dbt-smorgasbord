@@ -4,8 +4,7 @@
 
     {% do log("\n" ~ "list of models, materialization and full path:", info=true) %}
 
-        {% for node in graph.nodes.values()
-     |      selectattr("resource_type", "equalto", "model") %}
+        {% for node in graph.nodes.values() | selectattr("resource_type", "equalto", "model") %}
 
             {% if node.path.startswith(folder_path) %}
   
@@ -17,8 +16,7 @@
 
     {% do log("\n" ~ "list of just model names:", info=true) %}
 
-        {% for node in graph.nodes.values()
-     |      selectattr("resource_type", "equalto", "model") %}
+        {% for node in graph.nodes.values() | selectattr("resource_type", "equalto", "model") %}
 
             {% if node.path.startswith(folder_path) %}
 
