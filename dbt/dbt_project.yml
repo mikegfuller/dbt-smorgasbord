@@ -39,3 +39,4 @@ models:
 
 vars:
   org_name: 'Acme Corp'
+  var_num: 2
