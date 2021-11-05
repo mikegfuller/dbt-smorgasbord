@@ -39,4 +39,4 @@ models:
 
 vars:
   org_name: 'Acme Corp'
-  var_mike: 2
+  var_int: 2
