@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: mike_test
+    database: raw
+    schema: test
+
+    tables:
+      - name: my_new_table_{{ var('dynamic_table_id') }}

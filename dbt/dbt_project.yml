@@ -40,3 +40,4 @@ models:
 vars:
   org_name: 'Acme Corp'
   var_int: 2
+  dynamic_table_id: '0001'
