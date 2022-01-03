@@ -1,2 +1,2 @@
 select *
-from {{ source('mike_test', 'my_new_table_' ~ var('dynamic_table_id')) }}
+from {{ source_new('mike_test', 'my_new_table', 'dynamic_table_id') }}
