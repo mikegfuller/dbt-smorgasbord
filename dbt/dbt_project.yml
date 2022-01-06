@@ -32,7 +32,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  +pre-hook: "{{ audit_pre_hook() }}"
+  +pre-hook: "{{ audit_model_start() }}"
+  +post-hook: "{{ audit_model_end() }}"
   my_new_project:
       # Applies to all files under models/example/
       example:
