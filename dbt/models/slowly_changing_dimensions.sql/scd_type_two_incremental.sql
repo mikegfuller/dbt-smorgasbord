@@ -36,6 +36,7 @@ where id in (
     select row_id
     ,id
     ,event_dt
+    ,status
     ,eff_from
     ,eff_to
     ,current_flg
