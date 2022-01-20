@@ -1,0 +1,10 @@
+id, status, event_dt
+0,open,2021-01-01
+0,pending,2021-02-01
+0,closed,2021-03-01
+1,open,2021-01-02
+1,pending,2021-02-02
+1,closed,2021-03-02
+2,open,2021-01-03
+2,pending,2021-02-03
+3,open,2021-03-04
