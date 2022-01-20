@@ -41,4 +41,5 @@ where id in (
     ,current_flg
     from slowly_changing_dim
 )
+
 select * from final
