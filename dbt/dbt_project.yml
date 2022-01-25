@@ -36,6 +36,8 @@ models:
       # Applies to all files under models/example/
       example:
           materialized: view
+      test_folder:
+          schema: curry
 
 vars:
   org_name: 'Acme Corp'
