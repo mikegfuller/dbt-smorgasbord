@@ -1,0 +1,34 @@
+version: 2
+
+models:
+ - name: arr_sample
+ - name: arr_metrics_sample
+
+metrics:
+  - name: west_arr
+    label: West ARR
+    model: ref('arr_metrics_sample')
+    description: "Annual Recurring Revenue for the West Region"
+
+    type: sum
+    sql: arr
+
+    timestamp: arr_timestamp
+    time_grains: [day, week, month]
+
+    dimensions:
+      - region
+    
+    # filters:
+    #   - field: is_paying
+    #     operator: 'is'
+    #     value: 'true'
+    #   - field: lifetime_value
+    #     operator: '>='
+    #     value: '100'
+    #   - field: company_name
+    #     operator: '!='
+    #     value: "'Acme, Inc'"
+    #   - field: signup_date
+    #     operator: '>='
+    #     value: "'2020-01-01'"
