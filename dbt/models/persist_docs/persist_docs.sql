@@ -1,0 +1,1 @@
+select 1 as id, 'active' as status_desc
