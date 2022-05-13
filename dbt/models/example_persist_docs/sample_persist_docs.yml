@@ -1,0 +1,10 @@
+version: 2
+
+models:
+    - name: sample_persist_docs
+      description: "this is the persisted doc table"
+      columns:
+          - name: id
+            description: "{{ doc('sample_id') }}"
+          - name: status_desc
+            description: "The status of the record"

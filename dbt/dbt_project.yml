@@ -36,6 +36,11 @@ models:
       # Applies to all files under models/example/
       example:
           materialized: view
+      example_persist_docs:
+        +persist_docs:
+          relation: true
+          columns: true
+        materialized: table
 
 vars:
   org_name: 'Acme Corp'
