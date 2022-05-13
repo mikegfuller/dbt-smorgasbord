@@ -14,12 +14,24 @@ increment = {{ val_increment }}
 
 {% macro monotonic_sk() %}
 
-{% set sk_field_plus_alias %}
+{% set get_sk_field_query %}
 
-{{target.database}}.{{target.schema}}.{{this.table}}_seq.nextval as {{this.table}}_sk
+select ''' ~ {{target.database}}.{{target.schema}}.{{this.table}}_seq.nextval ~ '''
 
 {% endset %}
 
-{{ return(sk_field_plus_alias) }}
+{% set results = run_query(get_sk_field_query) %}
+
+{% if execute %}
+{# Return the first column #}
+{% set sk_field = results.columns[0].values() %}
+
+{% else %}
+
+{% set sk_field = 1 %}
+
+{% endif %}
+
+{{ return(sk_field) }}
 
 {% endmacro %}
