@@ -4,7 +4,7 @@
 
 {{ log(sql, info=True) }}
 
-{% set var_sql = 'alter table ' ~ env_var("blue_db") ~ '.' ~ env_var("blue_schema") ~ '.' ~ tablename ~ ' swap with ' ~ env_var("green_db") ~ '.' ~ env_var("green_schema")~ '.' ~ tablename %}
+{% set var_sql = 'alter table ' ~ env_var("DBT_BLUE_DB") ~ '.' ~ env_var("DBT_BLUE_SCHEMA") ~ '.' ~ tablename ~ ' swap with ' ~ env_var("DBT_GREEN_DB") ~ '.' ~ env_var("DBT_GREEN_SCHEMA")~ '.' ~ tablename %}
 
 {{ log(var_sql, info=True) }}
 
