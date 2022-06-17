@@ -1,0 +1,1 @@
+select 'CUST-NA-100000000'as atwrt
