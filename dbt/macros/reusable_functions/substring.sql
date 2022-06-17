@@ -6,13 +6,15 @@
 
     {%- set partNumber = 1  -%}
 
+    {% set quoted_delimiter = '\'' ~  delimiter  ~ '\''  %}
+
     {%- if column_name is none -%}
 
         {{ default_column_name }}
 
     {%- else -%}
 
-        (( split_part( {{ column_name }} , {{ delimiter }} , {{ partNumber }} )) )
+        (( split_part( {{ column_name }} , {{ quoted_delimiter }} , {{ partNumber }} )) )
 
     {%- endif -%}
 
@@ -31,13 +33,15 @@
 
     {%- set incrNumber = 2  -%}
 
+    {% set quoted_delimiter = '\'' ~  delimiter  ~ '\''  %}
+
     {%- if column_name is none -%}
 
         {{ default_column_name }}
 
     {%- else -%}
 
-        ((substring( {{ column_name }} , length(split_part( {{ column_name }}, {{ delimiter }}, {{ partNumber }} )) + {{ incrNumber }} , length( {{ column_name }} ))) )
+        ((substring( {{ column_name }} , length(split_part( {{ column_name }}, {{ quoted_delimiter }}, {{ partNumber }} )) + {{ incrNumber }} , length( {{ column_name }} ))) )
 
     {%- endif -%}
 

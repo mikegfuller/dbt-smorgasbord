@@ -6,12 +6,12 @@ WITH source AS
 
 SELECT
 
-       distinct atwrt org_atwrt, {{ str_before('atwrt', '\'-\'') }} as str_before_atwrt, {{ str_after('atwrt', '\'-\'') }} as str_after_atwrt
+       distinct test_col orig_test_col, {{ str_before('test_col', '-') }} as str_before_test_col, {{ str_after('test_col', '-') }} as str_after_test_col
 
 FROM
 
-    {{ ref('dbt_stg_ausp') }}
+    {{ ref('dbt_stg_substring') }}
 
 )
 
-SELECT * FROM source;
+SELECT * FROM source
