@@ -6,7 +6,7 @@
 
     {%- set partNumber = 1  -%}
 
-    {% set quoted_delimiter = '\'' ~  delimiter  ~ '\''  %}
+    {%- set quoted_delimiter = '\'' ~  delimiter  ~ '\''  -%}
 
     {%- if column_name is none -%}
 
@@ -33,7 +33,7 @@
 
     {%- set incrNumber = 2  -%}
 
-    {% set quoted_delimiter = '\'' ~  delimiter  ~ '\''  %}
+    {%- set quoted_delimiter = '\'' ~  delimiter  ~ '\''  -%}
 
     {%- if column_name is none -%}
 
