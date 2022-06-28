@@ -1,4 +1,4 @@
-{% materialization scd3_current_only, adapter='snowflake' %}
+{% materialization scd_current_only, adapter='snowflake' %}
 
   {% set original_query_tag = set_query_tag() %}
 
@@ -27,6 +27,12 @@
   {% call statement('main') -%}
     {{ create_table_as(false, target_relation, custom_sql) }}
   {%- endcall %}
+
+  {% call statement('update_end_date') -%}
+    update {{this}} set dbt_valid_to = '2999-12-31'
+  {%- endcall %}
+
+{{ log("this is a custom materialization", info=True) }}
 
   {{ run_hooks(post_hooks) }}
 
