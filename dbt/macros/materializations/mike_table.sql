@@ -18,6 +18,8 @@
     {{ drop_relation_if_exists(old_relation) }}
   {% endif %}
 
+  {{ log("this is a custom materialization", info=True) }}
+
   --build model
   {% call statement('main') -%}
     {{ create_table_as(false, target_relation, sql) }}
