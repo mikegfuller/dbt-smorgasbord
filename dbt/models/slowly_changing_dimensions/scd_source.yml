@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: scd_demo
+    schema: scd_demo_source
+    database: mike_fuller_sandbox
+    tables:
+      - name: bookings
