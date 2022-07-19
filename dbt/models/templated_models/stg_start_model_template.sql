@@ -1,0 +1,1 @@
+select 1 as id, 'template test' as descr, current_timestamp as create_time
