@@ -24,7 +24,6 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
 
-
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -40,3 +39,5 @@ models:
 vars:
   org_name: 'Acme Corp'
   var_int: 2
+
+on-run-end: "{{ centralize_test_failures(results) }}"
