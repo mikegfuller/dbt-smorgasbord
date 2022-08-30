@@ -4,7 +4,7 @@
   select current_timestamp
 {% endset %}
 
-{% if execute and flags.WHICH not in ['compile']  %}
+{% if execute and flags.WHICH in ['compile']  %}
     {% set return_value = 'yep' %}}}
 {% else %}
     {% set return_value = 'nope' %}
