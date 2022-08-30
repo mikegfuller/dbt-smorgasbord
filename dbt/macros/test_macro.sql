@@ -4,7 +4,7 @@
   select current_timestamp
 {% endset %}
 
-{% if execute and flags.WHICH in ['run', 'build', 'test', 'seed', 'run-operation', 'snapshot', 'rpc', 'generate']  %}
+{% if execute and flags.WHICH not in ['compile']  %}
     {% set return_value = 'yep' %}}}
 {% else %}
     {% set return_value = 'nope' %}
