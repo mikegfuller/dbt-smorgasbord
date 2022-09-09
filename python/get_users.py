@@ -4,7 +4,7 @@ import os
 
 # set token and variables (need to get rid of this hardcoding nonsense)
 api_token = os.getenv('DBT_CLOUD_API_KEY')
-account_id = 16837
+account_id = <your_account>
 
 # base url for dbt cloud
 base_url = "https://cloud.getdbt.com/api/v2/"
