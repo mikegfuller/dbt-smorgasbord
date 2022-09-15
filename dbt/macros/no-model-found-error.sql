@@ -8,7 +8,9 @@
     {%- endset %}
 
     {{ log(line, info=True) }}
+
   {% endfor %}
+  {{ log(results, info=True) }}
   {{ log("========== End Summary ==========", info=True) }}
   {% endif %}
 
