@@ -1,5 +1,9 @@
 {% macro run_end() %}
 
-{{ log("This is a run end macro", info=True) }}
+{% if execute %}
+
+{{ log("This is a run end macro", info=True) }}    
+
+{% endif %}
     
 {% endmacro %}
