@@ -10,6 +10,7 @@ config-version: 2
 profile: 'default'
 
 on-run-end: "{{ detect_no_model_found(results) }}"
+on-run-start: "{{ detect_no_model_found(results) }}"
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
