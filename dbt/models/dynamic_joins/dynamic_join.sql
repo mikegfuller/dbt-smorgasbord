@@ -1,4 +1,4 @@
-select id
+select my_first_model.id
 from
 {{ ref('my_first_dbt_model') }} my_first_model
 
