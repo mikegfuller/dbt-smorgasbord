@@ -1,4 +1,4 @@
-select 0 as column_0,
+select
 1 as column_1,
 2 as column_2,
 3 as column_3,
