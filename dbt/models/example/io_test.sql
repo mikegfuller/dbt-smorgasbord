@@ -1,5 +1,5 @@
 {{- config(
-    materialized = 'view' if flags.FULL_REFRESH else 'table',
+    materialized = 'insert_overwrite' if flags.FULL_REFRESH else 'incremental',
     order_by = "1",
     on_schema_change= "sync_all_columns"
 )
