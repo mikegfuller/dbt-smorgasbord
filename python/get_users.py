@@ -2,17 +2,17 @@ import requests
 import json
 import os
 
-# set token and variables (need to get rid of this hardcoding nonsense)
+# set token and variables
 api_token = os.getenv('DBT_CLOUD_API_KEY')
 account_id = <your_account>
 
 # base url for dbt cloud
 base_url = "https://cloud.getdbt.com/api/v2/"
 
-#endpoint to get manifest json file
+#endpoint to get users
 users_endpoint = f"accounts/{account_id}/users"
 
-#manifest url
+#users url
 users_url = base_url + users_endpoint
 
 # set headers
@@ -21,11 +21,11 @@ headers = {
     'Content-Type': 'application/json'
 }
 
-# hit artifacts endpoint and return manifest file
+# hit users endpoint
 get_users = requests.get(users_url, headers=headers)
 payload_user_response = json.loads(get_users.content)
-#formatted_users = json.dumps(payload_user_response, indent=2)
 
+#print list of users and their last login date
 for user in payload_user_response['data']:
     print(
     "UserID: " + str(user['id']) + "\n"
