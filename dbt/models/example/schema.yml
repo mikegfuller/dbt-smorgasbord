@@ -1,25 +1,22 @@
 
 version: 2
 
+template_model_config: &model_config
+  config:
+    database: mike_temp
+    schema: test
+
 models:
     - name: my_first_dbt_model
+      <<: *model_config
       description: "A starter dbt model"
       columns:
           - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null:
-                    config:
-                      severity: warn
 
     - name: my_second_dbt_model
       description: "A starter dbt model"
+      <<: *model_config
       columns:
           - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null:
-                    config:
-                      severity: warn
+        
+
