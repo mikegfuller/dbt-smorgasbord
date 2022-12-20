@@ -17,9 +17,7 @@ events as (
 ,events.id
 ,events.status
 ,events.event_dt as event_dt
-,events.event_dt as eff_from
-,case when lead(events.id) over(order by events.id, events.event_dt) = events.id then lead(events.event_dt) over(order by events.id, events.event_dt) else null end as eff_to
-,case when lead(events.id) over(order by events.id, events.event_dt) = events.id then 'N' else 'Y' end as current_flg
+,{{ scd2_cols('events.event_dt','events.id') }}
 from events
 
 {% if is_incremental() %}
