@@ -39,8 +39,8 @@ creds_endpoint = f"accounts/{account_id}/projects/{project_id}/credentials/{cred
 creds_url = base_url+creds_endpoint
 
 #get current cred settings
-get_creds = requests.get(creds_url, headers=headers)
-resp_cred = json.loads(get_creds.content)
+get_cred = requests.get(creds_url, headers=headers)
+resp_cred = json.loads(get_cred.content)
 
 #set current values for post
 cur_target_name = resp_cred['data']['target_name']
