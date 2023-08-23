@@ -33,10 +33,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_smorgasbord:
+    copy_grants: true
       # Applies to all files under models/example/
-      example:
-          materialized: view
+    example:
+      materialized: view
+
+
 
 vars:
   org_name: 'Acme Corp'
   var_int: 2
+  snapshot_schema: 'snapshots_test_var'
+  strategy: 'timestamp'

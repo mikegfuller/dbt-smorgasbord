@@ -1,4 +1,4 @@
-
+{{ config(grants = {'+select': ['sa_mike_1']}) }}
 /*
     Welcome to your first dbt model!
     Did you know that you can also configure models directly within SQL files?
@@ -11,9 +11,9 @@
 
 with source_data as (
 
-    select 1 as id
+    select 1 as id, current_timestamp as updated_at
     union all
-    select null as id
+    select null as id, current_timestamp as updated_at
 
 )
 
